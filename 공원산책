@@ -1,0 +1,75 @@
+class Solution {
+    public int[] solution(String[] park, String[] routes) {
+        int[] answer = new int[2];
+        int w = 0;
+        int h = 0;
+        int maxw = park[0].length() - 1;
+        int maxh = park.length - 1;
+        for(String str : park){
+            if(str.contains("S")){
+                w = str.indexOf("S");
+                break;
+            }
+            h += 1;
+        }
+        for(String str : routes){
+            char sel = str.charAt(0);
+            int cnt = ((int) str.charAt(2)) - '0';
+            switch(sel){
+                case 'N':
+                    if(h - cnt < 0){
+                        break;
+                    }
+                    for(int i = 1; i <= cnt; i++){
+                        if(park[h-i].charAt(w) == 'X'){
+                            break;
+                        }
+                        if(i == cnt){
+                            h -= cnt;
+                        }
+                    }
+                    break;
+                case 'S':
+                    if(h + cnt > maxh){
+                        break;
+                    }
+                    for(int i = 1; i <= cnt; i++){
+                        if(park[h+i].charAt(w) == 'X'){
+                            break;
+                        }
+                        if(i == cnt){
+                            h += cnt;
+                        }
+                    }
+                    break;
+                case 'W':
+                    if(w - cnt < 0){
+                        break;
+                    }
+                    if(park[h].substring(w - cnt, w + 1 ).contains("X")){
+                        break;
+                    }
+                    else{
+                        w -= cnt;
+                    }
+                    
+                    break;
+                case 'E':
+                    if(w + cnt > maxw){
+                        break;
+                    }
+                    if(park[h].substring(w, w + cnt + 1).contains("X")){
+                        break;
+                    }
+                    else{
+                        w += cnt;
+                    }
+                    
+                    break;
+            }
+        }
+        answer[0] = h;
+        answer[1] = w;
+        return answer;
+    }
+}
