@@ -7,4 +7,4 @@
 주소 : https://school.programmers.co.kr/learn/challenges/training?order=recent&languages=java&page=1
 
 
-다음 시작 : https://school.programmers.co.kr/learn/courses/30/lessons/181907
+다음 시작 : https://school.programmers.co.kr/learn/courses/30/lessons/181942
