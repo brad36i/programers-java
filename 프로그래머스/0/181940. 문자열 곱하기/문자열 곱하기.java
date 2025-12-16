@@ -1,10 +1,8 @@
 class Solution {
     public String solution(String my_string, int k) {
         String answer = "";
-        while(k > 0){
+        for(int i = 0; i< k; i++){
             answer += my_string;
-            
-            k--;
         }
         return answer;
     }
