@@ -1,13 +1,14 @@
 class Solution {
     public int solution(int a, int b) {
         int answer = 0;
-        String stra = String.valueOf(a);
-        String strb = String.valueOf(b);
-        int ab = Integer.valueOf(stra + strb);
-        int ba = Integer.valueOf(strb + stra);
-        answer = ab > ba ? ab : ba;
-        
-        
+        String chara = String.valueOf(a);
+        String charb = String.valueOf(b);
+        if(Integer.valueOf(chara+charb) >= Integer.valueOf(charb + chara)){
+            answer = Integer.valueOf(chara + charb);
+        }
+        else{
+            answer = Integer.valueOf(charb + chara);
+        }
         return answer;
     }
 }
