@@ -6,6 +6,7 @@ class Solution {
             if(mode == 0){
                 if(code.charAt(i) == '1'){
                     mode = 1;
+                    continue;
                 }
                 else if(i % 2 == 0){
                     answer += code.charAt(i);
@@ -14,6 +15,7 @@ class Solution {
             else{
                 if(code.charAt(i) == '1'){
                     mode = 0;
+                    continue;
                 }
                 else if(i % 2 != 0){
                     answer += code.charAt(i);
