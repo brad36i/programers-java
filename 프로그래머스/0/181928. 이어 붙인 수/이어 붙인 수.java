@@ -1,18 +1,17 @@
 class Solution {
     public int solution(int[] num_list) {
         int answer = 0;
-        int x = 0 ; int y = 0;
+        String oddnum = "";
+        String evennum = "";
         for(int i = 0; i < num_list.length; i++){
-            if(num_list[i] %2 ==0){
-                x = x * 10 + num_list[i];
-                
+            if(num_list[i] % 2 == 0){
+                evennum += num_list[i];
             }
             else{
-                y = y * 10 + num_list[i];
-                
+                oddnum += num_list[i];
             }
         }
-        answer = x + y;
+        answer = Integer.valueOf(evennum) + Integer.valueOf(oddnum);
         return answer;
     }
 }
