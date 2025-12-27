@@ -5,7 +5,7 @@ class Solution {
         int[] answer = {};
         int[] five = new int[65];
         for(int i = 0; i < 65; i++){
-            five[i] = Integer.valueOf((Integer.toBinaryString(i+1)).replaceAll("1", "5"));
+            five[i] = Integer.valueOf(Integer.toBinaryString(i+1))*5;
         }
         List<Integer> list = new ArrayList<>();
         for(int i = 0; i < 65; i++){
