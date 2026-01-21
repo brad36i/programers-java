@@ -1,7 +1,7 @@
 class Solution {
     public String solution(String polynomial) {
         String answer = "";
-        String[] strArr = polynomial.split("\\s\\+\\s");
+        String[] strArr = polynomial.split(" \\+ ");
         int xnum = 0;
         int num = 0;
         for(String str : strArr){
